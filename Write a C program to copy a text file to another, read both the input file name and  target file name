@@ -1,0 +1,23 @@
+#include<stdio.h> 
+#include<conio.h> 
+void main() 
+{ 
+FILE *fp1,*fp2; 
+char ch, sfile[10],dfile[10]; 
+clrscr(); 
+printf("Enter the source file\n"); 
+gets(sfile); 
+printf("Enter teh destination file\n"); 
+gets(dfile); 
+fp1=fopen(sfile,"r"); 
+fp2=fopen(dfile,"w"); 
+if(fp1==NULL||fp2==NULL) 
+printf("File doesnot exists"); 
+else 
+{  
+while((ch=fgetc(fp1))!=EOF) 
+fputc(ch,fp2); 
+printf("File copied\n"); 
+} 
+getch(); 
+}
